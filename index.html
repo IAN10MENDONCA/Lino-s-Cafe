@@ -1,422 +1,173 @@
-export default function LinosCafePage() {
-  const menuItems = [
-    {
-      title: "Sausage & Egg",
-      label: "Menu highlight",
-      description: "A classic breakfast favourite for a quick and satisfying start to the day.",
-      image:
-        "https://images.unsplash.com/photo-1608032077018-c9aad9565d29?auto=format&fit=crop&w=1200&q=80",
-    },
-    {
-      title: "Club Sandwich",
-      label: "Popular lunch pick",
-      description: "A reliable lunchtime option that fits the cafe’s quick, friendly service style.",
-      image:
-        "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1200&q=80",
-    },
-    {
-      title: "Full Breakfast",
-      label: "Cafe staple",
-      description: "A hearty breakfast option for regulars, workers, and morning visitors.",
-      image:
-        "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80",
-    },
-    {
-      title: "Paninis & Sandwiches",
-      label: "Fresh and easy",
-      description: "Perfect for quick lunches and takeaway orders throughout the day.",
-      image:
-        "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=1200&q=80",
-    },
-    {
-      title: "Coffee & Tea",
-      label: "Hot drinks",
-      description: "Freshly made hot drinks that suit morning traffic and daily regulars.",
-      image:
-        "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
-    },
-    {
-      title: "Fresh Sandwiches",
-      label: "Everyday favourite",
-      description: "Simple, affordable, and ideal for local workers and lunchtime customers.",
-      image:
-        "https://images.unsplash.com/photo-1553909489-cd47e0907980?auto=format&fit=crop&w=1200&q=80",
-    },
-  ];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lino's Cafe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-  const reviews = [
-    {
-      quote: "Lovely owner and great variety of food and drink for a good price.",
-      author: "Laura Fagan",
-    },
-    {
-      quote: "Exceptional and friendly service that makes you feel at home!",
-      author: "Alberto Medina",
-    },
-    {
-      quote: "A dependable local cafe with affordable food and a warm atmosphere.",
-      author: "Local customer",
-    },
-  ];
+<body class="bg-[#faf6ef] text-[#1b1b1b]">
 
-  return (
-    <>
-      <style>{`
-        html { scroll-behavior: smooth; }
-        body { margin: 0; }
-      `}</style>
-
-      <div className="min-h-screen bg-[#faf6ef] text-[#1b1b1b]">
-        <header className="sticky top-0 z-50 border-b border-[#f0dfcf] bg-[#faf6ef]/90 backdrop-blur">
-          <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 lg:px-10">
-            <a href="#top" className="flex items-center gap-3">
-              <img
-                src="/logo.png"
-                alt="Lino's Cafe logo"
-                className="h-12 w-12 rounded-xl object-cover bg-white shadow-sm ring-1 ring-[#f0dfcf]"
-              />
-              <div>
-                <p className="text-lg font-bold tracking-tight text-[#b85c1e]">Lino&apos;s Cafe</p>
-                <p className="text-xs uppercase tracking-[0.2em] text-[#8f4514]">Southwark • London</p>
-              </div>
-            </a>
-
-            <nav className="hidden items-center gap-6 text-sm font-medium text-[#6f5d50] md:flex">
-              <a href="#menu" className="transition hover:text-[#b85c1e]">Menu</a>
-              <a href="#reviews" className="transition hover:text-[#b85c1e]">Reviews</a>
-              <a href="#visit" className="transition hover:text-[#b85c1e]">Visit</a>
-              <a
-                href="tel:02079282942"
-                className="rounded-2xl bg-[#b85c1e] px-5 py-2.5 font-semibold text-white transition hover:opacity-90"
-              >
-                Call Now
-              </a>
-            </nav>
-          </div>
-        </header>
-
-        <section id="top" className="relative overflow-hidden bg-[#b85c1e] text-white">
-          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(184,92,30,0.97),rgba(231,140,61,0.92))]" />
-          <div className="absolute inset-y-0 right-0 hidden w-1/2 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] lg:block" />
-
-          <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
-            <div className="mb-8 flex items-center gap-4">
-              <img
-                src="/logo.png"
-                alt="Lino's Cafe logo"
-                className="h-20 w-20 rounded-2xl bg-white/95 object-cover p-1 shadow-2xl ring-1 ring-white/25"
-              />
-              <div>
-                <p className="text-sm uppercase tracking-[0.25em] text-white/80">Lino&apos;s Cafe</p>
-                <p className="text-white/80">Friendly local cafe in Southwark</p>
-              </div>
-            </div>
-
-            <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
-              <div>
-                <p className="mb-5 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm tracking-wide text-white/90">
-                  Breakfast • Sandwiches • Hot Drinks • Local Cafe Favourites
-                </p>
-
-                <h1 className="max-w-3xl text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-                  A welcoming local cafe in the heart of Southwark
-                </h1>
-
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-[#fff0e4]">
-                  Lino&apos;s Cafe brings together fresh coffee, breakfast favourites,
-                  sandwiches, and affordable comfort food in a friendly neighbourhood
-                  setting near Pocock Street.
-                </p>
-
-                <div className="mt-8 flex flex-wrap gap-4">
-                  <a
-                    href="#visit"
-                    className="rounded-2xl bg-white px-6 py-3.5 font-semibold text-[#b85c1e] shadow-lg transition hover:scale-[1.02]"
-                  >
-                    Visit the Cafe
-                  </a>
-                  <a
-                    href="#menu"
-                    className="rounded-2xl border border-white/25 px-6 py-3.5 font-semibold text-white transition hover:bg-white/10"
-                  >
-                    Explore the Menu
-                  </a>
-                </div>
-
-                <div className="mt-10 grid gap-4 sm:grid-cols-3">
-                  <div className="rounded-2xl border border-white/15 bg-white/10 p-5">
-                    <p className="text-sm uppercase tracking-wide text-white/70">Rating</p>
-                    <p className="mt-2 text-2xl font-bold">4.5 / 5</p>
-                  </div>
-                  <div className="rounded-2xl border border-white/15 bg-white/10 p-5">
-                    <p className="text-sm uppercase tracking-wide text-white/70">Price range</p>
-                    <p className="mt-2 text-2xl font-bold">£1–10</p>
-                  </div>
-                  <div className="rounded-2xl border border-white/15 bg-white/10 p-5">
-                    <p className="text-sm uppercase tracking-wide text-white/70">Open today</p>
-                    <p className="mt-2 text-2xl font-bold">Until 4:00 pm</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid gap-4">
-                <div className="overflow-hidden rounded-[28px] border border-white/10 bg-[#8f4514] p-3 shadow-2xl">
-                  <img
-                    src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=80"
-                    alt="Cafe interior"
-                    className="h-[360px] w-full rounded-[22px] object-cover lg:h-[420px]"
-                  />
-                </div>
-
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur-sm">
-                    <p className="text-sm uppercase tracking-[0.18em] text-[#fff0d0]">Cafe atmosphere</p>
-                    <h3 className="mt-3 text-2xl font-semibold">Warm, simple, and made for everyday regulars</h3>
-                    <p className="mt-3 leading-7 text-white/75">
-                      A local spot built around good coffee, fast service, classic breakfast,
-                      and honest value.
-                    </p>
-                  </div>
-
-                  <div className="rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur-sm">
-                    <p className="text-sm uppercase tracking-[0.18em] text-[#fff0d0]">Popular picks</p>
-                    <ul className="mt-3 space-y-2 text-white/85">
-                      <li>Sausage &amp; Egg</li>
-                      <li>Club Sandwich</li>
-                      <li>Fresh Coffee</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
-          <div className="grid gap-8 lg:grid-cols-3">
-            <div className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-[#f0dfcf]">
-              <h2 className="text-2xl font-bold text-[#2d1d12]">About Lino&apos;s Cafe</h2>
-              <p className="mt-4 leading-7 text-[#6f5d50]">
-                Located at 7 Moonraker Point, Lino&apos;s Cafe is a friendly local cafe serving
-                breakfast, sandwiches, coffee, and quick comfort food for workers, locals,
-                and regular customers.
-              </p>
-            </div>
-
-            <div className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-[#f0dfcf]">
-              <h2 className="text-2xl font-bold text-[#2d1d12]">Neighbourhood Identity</h2>
-              <p className="mt-4 leading-7 text-[#6f5d50]">
-                The visual direction keeps things bright, warm, and welcoming with clean
-                whites, orange accents, and a polished everyday-cafe look that feels
-                approachable and modern.
-              </p>
-            </div>
-
-            <div className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-[#f0dfcf]">
-              <h2 className="text-2xl font-bold text-[#2d1d12]">What Sets It Apart</h2>
-              <p className="mt-4 leading-7 text-[#6f5d50]">
-                Affordable prices, friendly service, reliable breakfast choices, and a
-                comfortable local atmosphere that makes it easy to stop by for coffee or lunch.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-[#f6eadf] py-16">
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
-            <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-              <div className="overflow-hidden rounded-[30px] bg-white p-3 shadow-sm ring-1 ring-[#ead7c5]">
-                <img
-                  src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1600&q=80"
-                  alt="Coffee and pastries"
-                  className="h-[430px] w-full rounded-[24px] object-cover"
-                />
-              </div>
-
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#c56b1d]">
-                  Drinks spotlight
-                </p>
-                <h2 className="mt-3 text-4xl font-bold tracking-tight text-[#2d1d12]">
-                  Fresh coffee and quick cafe favourites that fit daily life
-                </h2>
-                <p className="mt-4 max-w-2xl leading-7 text-[#6f5d50]">
-                  Lino&apos;s Cafe is built around simple things done well — coffee, breakfast
-                  rolls, sandwiches, and everyday food that suits commuters, workers, and
-                  local regulars.
-                </p>
-
-                <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                  {[
-                    "Freshly brewed coffee",
-                    "Tea & hot drinks",
-                    "Breakfast rolls",
-                    "Fresh sandwiches",
-                    "Affordable lunch options",
-                    "Daily cafe staples",
-                    "Friendly service with everyday value",
-                  ].map((item, index) => (
-                    <div
-                      key={item}
-                      className={`rounded-2xl border border-[#ead7c5] bg-white px-4 py-3 text-[#3d2b24] shadow-sm ${
-                        index === 6 ? "sm:col-span-2" : ""
-                      }`}
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="menu" className="py-16">
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
-            <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#c56b1d]">
-                Menu highlights
-              </p>
-              <h2 className="mt-3 text-4xl font-bold tracking-tight text-[#2d1d12]">
-                Fresh, hearty, and made for everyday regulars
-              </h2>
-              <p className="mt-4 leading-7 text-[#6f5d50]">
-                A practical menu built around breakfast favourites, sandwiches, hot drinks,
-                and quick local cafe food.
-              </p>
-            </div>
-
-            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {menuItems.map((item) => (
-                <div
-                  key={item.title}
-                  className="overflow-hidden rounded-[28px] bg-white shadow-sm ring-1 ring-[#f0dfcf] transition hover:-translate-y-1"
-                >
-                  <img src={item.image} alt={item.title} className="h-56 w-full object-cover" />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-[#2d1d12]">{item.title}</h3>
-                    <p className="mt-1 text-sm text-[#c56b1d]">{item.label}</p>
-                    <p className="mt-3 text-[#6f5d50]">{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="reviews" className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
-          <div className="grid gap-8 lg:grid-cols-2">
-            <div className="rounded-[30px] bg-[#b85c1e] p-8 text-white shadow-xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#fff0d0]">
-                Customer trust
-              </p>
-              <h2 className="mt-3 text-3xl font-bold">A well-liked local cafe experience</h2>
-
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl bg-white/10 p-5">
-                  <p className="text-3xl font-bold">4.5/5</p>
-                  <p className="mt-1 text-white/70">Average rating</p>
-                </div>
-                <div className="rounded-2xl bg-white/10 p-5">
-                  <p className="text-3xl font-bold">38</p>
-                  <p className="mt-1 text-white/70">Google reviews</p>
-                </div>
-                <div className="rounded-2xl bg-white/10 p-5 sm:col-span-2">
-                  <p className="text-lg font-semibold">
-                    Friendly service, good prices, and a welcoming local feel
-                  </p>
-                  <p className="mt-2 text-white/75">
-                    The messaging stays honest and approachable, matching the real-world
-                    cafe experience.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              {reviews.map((review) => (
-                <div key={review.author} className="rounded-[28px] bg-white p-6 shadow-sm ring-1 ring-[#f0dfcf]">
-                  <p className="text-lg leading-7 text-[#45362f]">“{review.quote}”</p>
-                  <p className="mt-4 font-semibold text-[#2d1d12]">— {review.author}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="visit" className="bg-[#f6eadf] py-16">
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
-              <div className="rounded-[30px] bg-[#8f4514] p-8 text-white shadow-xl">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#fff0d0]">
-                  Visit us
-                </p>
-
-                <h2 className="mt-3 text-3xl font-bold">Find Lino&apos;s Cafe in Southwark</h2>
-
-                <div className="mt-6 space-y-4 text-[#ffe8d3]">
-                  <p>
-                    <span className="font-semibold text-white">Address:</span> 7 Moonraker Point,
-                    Pocock St, London SE1 0FN
-                  </p>
-                  <p>
-                    <span className="font-semibold text-white">Phone:</span> 020 7928 2942
-                  </p>
-                  <p>
-                    <span className="font-semibold text-white">Hours:</span> Open · Closes 4:00 pm
-                  </p>
-                  <p>
-                    <span className="font-semibold text-white">Price per person:</span> £1–10
-                  </p>
-                </div>
-
-                <div className="mt-8 flex flex-wrap gap-4">
-                  <a
-                    href="https://maps.google.com/?q=7%20Moonraker%20Point%2C%20Pocock%20St%2C%20London%20SE1%200FN"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-2xl bg-white px-6 py-3.5 font-semibold text-[#b85c1e] transition hover:scale-[1.02]"
-                  >
-                    Get Directions
-                  </a>
-
-                  <a
-                    href="tel:02079282942"
-                    className="rounded-2xl border border-white/20 px-6 py-3.5 font-semibold text-white/90"
-                  >
-                    Call the Cafe
-                  </a>
-                </div>
-              </div>
-
-              <div className="overflow-hidden rounded-[30px] bg-white p-3 shadow-sm ring-1 ring-[#ead7c5]">
-                <img
-                  src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=1600&q=80"
-                  alt="Cafe table with food and coffee"
-                  className="h-full min-h-[420px] w-full rounded-[24px] object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <footer className="border-t border-[#f0dfcf] bg-[#faf6ef]">
-          <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 text-sm text-[#6f5d50] lg:flex-row lg:items-center lg:justify-between lg:px-10">
-            <p>© 2026 Lino&apos;s Cafe. All rights reserved.</p>
-            <div className="flex gap-4">
-              <a href="#menu" className="hover:text-[#2d1d12]">
-                Menu
-              </a>
-              <a href="#visit" className="hover:text-[#2d1d12]">
-                Visit
-              </a>
-              <a href="tel:02079282942" className="hover:text-[#2d1d12]">
-                Call
-              </a>
-            </div>
-          </div>
-        </footer>
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-[#eee2d6] shadow-sm">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-5 py-4">
+      <div class="flex items-center gap-3">
+        <img
+          src="./logo.png"
+          alt="Lino's Cafe logo"
+          class="w-12 h-12 rounded-lg object-cover bg-white"
+        />
+        <h2 class="text-xl font-bold text-[#b85c1e]">Lino’s Cafe</h2>
       </div>
-    </>
-  );
-}
+      <nav class="flex gap-5 text-sm md:text-base">
+        <a href="#menu" class="hover:text-[#b85c1e] transition">Menu</a>
+        <a href="#visit" class="hover:text-[#b85c1e] transition">Visit</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="grid md:grid-cols-2 bg-[#b85c1e] text-white min-h-[85vh]">
+    <div class="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+      <img
+        src="./logo.png"
+        alt="Lino's Cafe logo"
+        class="w-20 h-20 mb-5 rounded-xl bg-white p-1 object-cover"
+      />
+
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+        Fresh coffee. Proper breakfast. Local vibes.
+      </h1>
+
+      <p class="mt-5 text-[#fff0e4] text-base md:text-lg max-w-xl leading-7">
+        Lino's Cafe is your go-to spot in Southwark for breakfast,
+        sandwiches, and comfort food at honest prices.
+      </p>
+
+      <a
+        href="#menu"
+        class="mt-8 bg-white text-[#b85c1e] px-6 py-3 rounded-xl font-semibold w-fit hover:opacity-90 transition"
+      >
+        Explore Menu
+      </a>
+    </div>
+
+    <div class="min-h-[320px] md:min-h-full">
+      <img
+        src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1400&q=80"
+        alt="Cafe interior"
+        class="w-full h-full object-cover"
+      />
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="max-w-7xl mx-auto p-6 md:p-10 grid md:grid-cols-3 gap-6">
+    <div class="bg-white p-6 rounded-2xl shadow-sm border border-[#eee2d6]">
+      <h3 class="font-bold text-lg">Breakfast & Rolls</h3>
+      <p class="text-gray-600 mt-2 leading-7">Quick, affordable meals for everyday customers.</p>
+    </div>
+    <div class="bg-white p-6 rounded-2xl shadow-sm border border-[#eee2d6]">
+      <h3 class="font-bold text-lg">Friendly Service</h3>
+      <p class="text-gray-600 mt-2 leading-7">Warm and welcoming atmosphere.</p>
+    </div>
+    <div class="bg-white p-6 rounded-2xl shadow-sm border border-[#eee2d6]">
+      <h3 class="font-bold text-lg">Great Value</h3>
+      <p class="text-gray-600 mt-2 leading-7">Quality food at local prices.</p>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" class="max-w-7xl mx-auto p-6 md:p-10">
+    <h2 class="text-3xl font-bold mb-8">Menu Highlights</h2>
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <div class="flex gap-4 items-center border-b border-[#eadfd4] pb-4">
+        <img
+          src="https://images.unsplash.com/photo-1608032077018-c9aad9565d29?auto=format&fit=crop&w=800&q=80"
+          class="w-20 h-16 object-cover rounded-lg"
+          alt="Sausage and Egg"
+        />
+        <div>
+          <p class="font-bold">Sausage & Egg</p>
+          <p class="text-[#b85c1e]">£3.50</p>
+        </div>
+      </div>
+
+      <div class="flex gap-4 items-center border-b border-[#eadfd4] pb-4">
+        <img
+          src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"
+          class="w-20 h-16 object-cover rounded-lg"
+          alt="Club Sandwich"
+        />
+        <div>
+          <p class="font-bold">Club Sandwich</p>
+          <p class="text-[#b85c1e]">£4.80</p>
+        </div>
+      </div>
+
+      <div class="flex gap-4 items-center border-b border-[#eadfd4] pb-4">
+        <img
+          src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80"
+          class="w-20 h-16 object-cover rounded-lg"
+          alt="Full Breakfast"
+        />
+        <div>
+          <p class="font-bold">Full Breakfast</p>
+          <p class="text-[#b85c1e]">£6.50</p>
+        </div>
+      </div>
+
+      <div class="flex gap-4 items-center border-b border-[#eadfd4] pb-4">
+        <img
+          src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80"
+          class="w-20 h-16 object-cover rounded-lg"
+          alt="Coffee or Tea"
+        />
+        <div>
+          <p class="font-bold">Coffee / Tea</p>
+          <p class="text-[#b85c1e]">£1.50</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="bg-white border-y border-[#eee2d6]">
+    <div class="max-w-7xl mx-auto p-6 md:p-10">
+      <h2 class="text-3xl font-bold mb-8">Reviews</h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-5 shadow-sm rounded-2xl border border-[#eee2d6]">
+          “Lovely owner and great variety of food.”
+        </div>
+        <div class="p-5 shadow-sm rounded-2xl border border-[#eee2d6]">
+          “Exceptional and friendly service.”
+        </div>
+        <div class="p-5 shadow-sm rounded-2xl border border-[#eee2d6]">
+          “Great local café experience.”
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit" class="max-w-7xl mx-auto p-6 md:p-10">
+    <h2 class="text-3xl font-bold mb-4">Visit Us</h2>
+    <div class="space-y-2 text-[#4d4d4d]">
+      <p>7 Moonraker Point, London SE1 0FN</p>
+      <p>020 7928 2942</p>
+      <p>Open · Closes 4 pm</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#b85c1e] text-white text-center p-6">
+    Lino’s Cafe • London
+  </footer>
+
+</body>
+</html>
